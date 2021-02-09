@@ -1,6 +1,16 @@
 let transactions = [];
 let myChart;
 
+//code for pwa deployment
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('service-worker.js').then(reg => {
+      console.log('Our service worker file is installed', reg);
+    });
+  });
+}
+
+
 fetch("/api/transaction")
   .then(response => {
     return response.json();
