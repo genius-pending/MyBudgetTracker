@@ -17,8 +17,18 @@ app.use(express.static("public"));
 
 mongoose.connect("mongodb://localhost/budget", {
   useNewUrlParser: true,
-  useFindAndModify: false
+  useFindAndModify: false,
+  useUnifiedTopology: true
 });
+
+//code for pwa deployment
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('service-worker.js').then(reg => {
+      console.log('Our service worker file is installed', reg);
+    });
+  });
+}
 
 // routes
 app.use(require("./routes/api.js"));
