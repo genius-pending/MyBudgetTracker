@@ -1,6 +1,6 @@
 {
-    "name": "budgettracker",
-    "short_name": "budgettracker",
+    "name": "budget tracker",
+    "short_name": "budget tracker",
     "start_url": "/",
     "display": "standalone",
     "theme_color": "#ffffff",
