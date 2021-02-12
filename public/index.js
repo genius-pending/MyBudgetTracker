@@ -17,7 +17,7 @@ fetch("/api/transaction")
   })
   .then(data => {
     // save db data on global variable
-    transactions = data;
+    transactions = Object.keys(data) > 0 ? data : [];
 
     populateTotal();
     populateTable();
