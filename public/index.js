@@ -109,9 +109,12 @@ function sendTransaction(isAdding) {
     date: new Date().toISOString()
   };
 
-  // if subtracting funds, convert amount to negative number
+  // if subtracting funds, convert amount to negative number and turn total text colour red 
   if (!isAdding) {
     transaction.value *= -1;
+    transaction.value.style.color = "red";
+  } else {
+    transaction.value.style.color = "green";
   }
 
   // add to beginning of current array of data
