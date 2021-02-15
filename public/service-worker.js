@@ -22,7 +22,7 @@ const FILES_TO_CACHE = [
       })
     );
   
-    self.skipWaiting();
+    
   });
   
   self.addEventListener("activate", function(event) {
